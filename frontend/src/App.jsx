@@ -13,7 +13,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 function App() {
   return (
     <React.Fragment>
-      <HomePage /> 
+      {/* <HomePage />  */}
        {/* <ShopPage />  */}
        {/* <ContactPage />  */}
        {/* <AuthPage />  */}
