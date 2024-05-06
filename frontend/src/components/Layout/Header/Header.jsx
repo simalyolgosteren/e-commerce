@@ -1,12 +1,10 @@
 import { useContext } from "react";
 import "./Header.css";
 import Proptypes from "prop-types";
-import { CardContext } from "../../../context/CardProvider";
+import { CartContext } from "../../../context/CartProvider";
 
-
-function Header ({setIsSearchShow}) {
-  const { cardItems } = useContext(CardContext);
-
+const Header = ({ setIsSearchShow }) => {
+  const { cartItems } = useContext(CartContext);
   return (
     <header>
       <div className="global-notification">
@@ -145,13 +143,13 @@ function Header ({setIsSearchShow}) {
                                 <a href="#">Shop Load More</a>
                               </li>
                               <li>
-                                <a href="#">card Modal</a>
+                                <a href="#">Cart Modal</a>
                               </li>
                               <li>
-                                <a href="#">card Drawer</a>
+                                <a href="#">Cart Drawer</a>
                               </li>
                               <li>
-                                <a href="#">card Page</a>
+                                <a href="#">Cart Page</a>
                               </li>
                             </ul>
                           </div>
@@ -195,16 +193,21 @@ function Header ({setIsSearchShow}) {
                 <a href="account.html" className="header-account">
                   <i className="bi bi-person"></i>
                 </a>
-                <button className="search-button" onClick={() => setIsSearchShow(true)}>
+                <button
+                  className="search-button"
+                  onClick={() => setIsSearchShow(true)}
+                >
                   <i className="bi bi-search"></i>
                 </button>
                 <a href="#">
                   <i className="bi bi-heart"></i>
                 </a>
-                <div className="header-card">
-                  <a href="card.html" className="header-card-link">
+                <div className="header-cart">
+                  <a href="cart.html" className="header-cart-link">
                     <i className="bi bi-bag"></i>
-                    <span className="header-card-count">{cardItems.length}</span>
+                    <span className="header-cart-count">
+                      {cartItems.length}
+                    </span>
                   </a>
                 </div>
               </div>
@@ -215,9 +218,7 @@ function Header ({setIsSearchShow}) {
     </header>
   );
 };
-
 export default Header;
-
 Header.propTypes = {
   setIsSearchShow: Proptypes.func,
 };

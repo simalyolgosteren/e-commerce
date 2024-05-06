@@ -1,20 +1,20 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import { useContext } from "react";
-import { CardContext } from "../../context/CardProvider";
+import { CartContext } from "../../context/CartProvider";
 
-const CardItem = (cardItem) => {
-  const { removeFromcard } = useContext(CardContext);
+const CardItem = ({ cartItem }) => {
+  const { removeFromCart } = useContext(CartContext);
   return (
-    <tr className="card-item">
+    <tr className="cart-item">
       <td></td>
-      <td className="card-image">
-      <img src={cardItem.img.singleImage} alt="" />
+      <td className="cart-image">
+      <img src={cartItem.img.singleImage} alt="" />
         <i
-          className="bi bi-x delete-card"
-          onClick={() => removeFromcard(cardItem.id)}
+          className="bi bi-x delete-cart"
+          onClick={() => removeFromCart(cartItem.id)}
         ></i>
       </td>
-      <td>{cardItem.name}</td>
+      <td>{cartItem.name}</td>
       <td>$108.00</td>
       <td className="product-quantity">1</td>
       <td className="product-subtotal">$108.00</td>
@@ -25,5 +25,5 @@ const CardItem = (cardItem) => {
 export default CardItem;
 
 CardItem.propTypes = {
-  cardItem: PropTypes.object
-}
+  cartItem: PropTypes.object,
+};
