@@ -2,36 +2,31 @@ import { useState } from "react";
 import ProductItem from "./ProductItem";
 import Slider from "react-slick";
 import PropTypes from "prop-types";
-import productsData from "../../data.json"
+import productsData from "../../data.json";
 import "./Products.css";
-
-function NextBtn ({onClick}) {
-  return(
-  <button className="glide__arrow glide__arrow--right" onClick={onClick}>
+function NextBtn({ onClick }) {
+  return (
+    <button className="glide__arrow glide__arrow--right" onClick={onClick}>
       <i className="bi bi-chevron-right"></i>
-  </button>
-  )
+    </button>
+  );
 }
-
 NextBtn.propTypes = {
   onClick: PropTypes.func,
 };
-
-function PrevBtn ({onClick}) {
-  return(
+function PrevBtn({ onClick }) {
+  return (
     <button className="glide__arrow glide__arrow--left" onClick={onClick}>
-       <i className="bi bi-chevron-left"></i>
+      <i className="bi bi-chevron-left"></i>
     </button>
-  )
+  );
 }
-
 PrevBtn.propTypes = {
   onClick: PropTypes.func,
 };
 
-function Products () {
+const Products = () => {
   const [products] = useState(productsData);
-
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -59,25 +54,23 @@ function Products () {
 
   return (
     <section className="products">
-      <div className="container">
+       <div className="container">
         <div className="section-title">
           <h2>Featured Products</h2>
           <p>Summer Collection New Morden Design</p>
         </div>
         <div className="product-wrapper product-carousel">
-              <Slider {...sliderSettings}>
-              {products.map((product) => (
-                <ProductItem productItem ={product}
-                key={product.id} />
-              ))}
-              </Slider>
-          <div className="glide__arrows">
-            
-          </div>
-        </div>
+          <Slider {...sliderSettings}>
+            {products.map((product) => (
+              <ProductItem
+              productItem={product}
+              key={product.id}
+            />
+          ))}
+        </Slider>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 };
-
 export default Products;

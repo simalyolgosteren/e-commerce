@@ -1,15 +1,10 @@
 import PropTypes from "prop-types";
-import "./ProductItem.css";
 import { useContext } from "react";
-import { CardContext } from "../../context/CardProvider";
+import { CartContext } from "../../context/CartProvider";
+import "./ProductItem.css";
 
-const ProductItem = ({productItem}) => {
-
-  const { cardItems, addToCard } = useContext(CardContext);
-
-  const filteredcard = cardItems.find(
-    (cardItem) => cardItem.id === productItem.id
-  );
+const ProductItem = ({ productItem }) => {
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div className="product-item glide__slide glide__slide--active">
@@ -21,7 +16,7 @@ const ProductItem = ({productItem}) => {
       </div>
       <div className="product-info">
         <a href="$" className="product-title">
-         {productItem.name}
+          {productItem.name}
         </a>
         <ul className="product-star">
           <li>
@@ -41,7 +36,7 @@ const ProductItem = ({productItem}) => {
           </li>
         </ul>
         <div className="product-prices">
-        <strong className="new-price">
+          <strong className="new-price">
             ${productItem.price.newPrice.toFixed(2)}
           </strong>
           <span className="old-price">
@@ -50,9 +45,10 @@ const ProductItem = ({productItem}) => {
         </div>
         <span className="product-discount">-{productItem.discount}%</span>
         <div className="product-links">
-          <button className="add-to-card" onClick={() => 
-                                          addToCard(productItem)}
-                                          disabled={filteredcard} >
+          <button
+            className="add-to-cart"
+            onClick={() => addToCart(productItem)}
+          >
             <i className="bi bi-basket-fill"></i>
           </button>
           <button>
@@ -69,10 +65,8 @@ const ProductItem = ({productItem}) => {
     </div>
   );
 };
-
 export default ProductItem;
-
 ProductItem.propTypes = {
   productItem: PropTypes.object,
-  setcardItems: PropTypes.func,
-}
+  setCartItems: PropTypes.func,
+};
