@@ -4,7 +4,7 @@ import "./App.css";
 import ShopPage from "./pages/ShopPage";
 import ContactPage from "./pages/ContactPage";
 import AuthPage from "./pages/AuthPages";
-import CardPage from "./pages/CardPage";
+import CartPage from "./pages/CartPage";
 import BlogPage from "./pages/BlogPage";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
@@ -17,7 +17,7 @@ function App() {
        {/* <ShopPage />  */}
        {/* <ContactPage />  */}
        {/* <AuthPage />  */}
-       <CardPage /> 
+       <CartPage /> 
        {/* <BlogPage />  */}
        {/* <BlogDetailsPage /> */}
       {/* <ProductDetailsPage /> */}
