@@ -155,20 +155,20 @@
     color: #fff;
   }
 
-  .site-main .card-button {
+  .site-main .cart-button {
     display: flex;
     column-gap: 10px;
   }
 
-  .site-main .card-button input {
+  .site-main .cart-button input {
     width: 80px;
   }
 
-  .site-main .card-button button {
+  .site-main .cart-button button {
     width: 100%;
   }
 
-  .site-main .card-button button:disabled {
+  .site-main .cart-button button:disabled {
     background-color: #1367ef;
     color: #fff;
     border-color: #1367ef;

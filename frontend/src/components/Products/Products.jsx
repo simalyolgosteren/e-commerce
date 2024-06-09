@@ -54,7 +54,7 @@ const Products = () => {
 
   return (
     <section className="products">
-       <div className="container">
+      <div className="container">
         <div className="section-title">
           <h2>Featured Products</h2>
           <p>Summer Collection New Morden Design</p>

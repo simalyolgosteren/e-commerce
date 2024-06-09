@@ -77,10 +77,10 @@ const Info = () => {
             <input type="number" defaultValue="1" min="1" id="quantity" />
             <button
               className="btn btn-lg btn-primary"
-              id="add-to-card"
+              id="add-to-cart"
               type="button"
             >
-              Add to card
+              Add to cart
             </button>
           </div>
           <div className="product-extra-buttons">

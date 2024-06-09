@@ -70,6 +70,7 @@ const ProductItem = ({ productItem }) => {
     </div>
   );
 };
+
 export default ProductItem;
 ProductItem.propTypes = {
   productItem: PropTypes.object,
