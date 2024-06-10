@@ -1,6 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+
 export const CartContext = createContext();
+
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(
     localStorage.getItem("cartItems")
@@ -12,7 +14,6 @@ const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addToCart = (cartItem) => {
-    // setCartItems([...cartItems, cartItem]); 1. yol
     setCartItems((prevCart) => [
       ...prevCart,
       {
@@ -43,6 +44,7 @@ const CartProvider = ({ children }) => {
 };
 
 export default CartProvider;
+
 CartProvider.propTypes = {
   children: PropTypes.node,
 };

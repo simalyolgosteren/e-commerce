@@ -62,15 +62,15 @@ const Products = () => {
         <div className="product-wrapper product-carousel">
           <Slider {...sliderSettings}>
             {products.map((product) => (
-              <ProductItem
-              productItem={product}
-              key={product.id}
-            />
-          ))}
-        </Slider>
-      </div>
-    </div>
-  </section>
-);
+               <ProductItem
+               productItem={product}
+               key={product.id}
+             />
+           ))}
+         </Slider>
+       </div>
+     </div>
+   </section>
+ );
 };
 export default Products;
