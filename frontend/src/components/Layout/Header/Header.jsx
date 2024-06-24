@@ -7,6 +7,7 @@ import { CartContext } from "../../../context/CartProvider";
 const Header = ({ setIsSearchShow }) => {
   const { cartItems } = useContext(CartContext);
 
+  const user = localStorage.getItem("user");
   const { pathname } = useLocation();
 
   return (
@@ -227,6 +228,25 @@ const Header = ({ setIsSearchShow }) => {
                     </span>
                   </Link>
                 </div>
+                {user && (
+                  <button
+                    className="search-button"
+                    onClick={() => {
+                      if (
+                        window.confirm(
+                          "Çıkış yapmak istediğinize emin misiniz?"
+                        )
+                      ) {
+                        {
+                          localStorage.removeItem("user");
+                          window.location.href = "/";
+                        }
+                      }
+                    }}
+                  >
+                    <i className="bi bi-box-arrow-right"></i>
+                  </button>
+                )}
               </div>
             </div>
           </div>
