@@ -13,8 +13,14 @@ import { useNavigate } from "react-router-dom";
 
 const {Sider, Header, Content} = Layout;
 
+const getUserRole = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  return user ? user.role : null;
+}
+
 function AdminLayout ({children}) {
 const navigate = useNavigate();
+const userRole = getUserRole();
 
 const menuItems = [
   {
@@ -124,6 +130,7 @@ const menuItems = [
   },
 ]
 
+if(userRole === "admin") {
   return (
     <div className="admin-layout">
       <Layout style={{
@@ -151,15 +158,18 @@ const menuItems = [
               style={{
                 padding:"24px 50px",
                 minHeight:360
-              }}> sdfghj
+              }}> 
                 {children}
               </div>
           </Content>
         </Layout>
       </Layout>
     </div>
-  )
-}
+  );
+}else {
+  return (window.location.href = "/");  //admin değilse anasayfaya yönlendirmesi için bunu renderlayacak
+}  
+};
 
 export default AdminLayout;
 

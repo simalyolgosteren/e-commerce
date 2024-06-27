@@ -1,6 +1,6 @@
 import "./CategoryItem.css"
 
-function CategoryItem() {
+const CategoryItem = () => {
   return (
     <li className="category-item">
       <a href="#">

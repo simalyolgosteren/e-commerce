@@ -1,7 +1,7 @@
 import CategoryItem from "./CategoryItem";
 import "./Categories.css";
 
-function Categories() {
+const Categories = () => {
   return (
     <section className="categories">
       <div className="container">
@@ -22,4 +22,4 @@ function Categories() {
   );
 };
 
-export default Categories
+export default Categories;
