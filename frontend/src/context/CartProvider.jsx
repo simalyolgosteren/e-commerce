@@ -9,11 +9,13 @@ const CartProvider = ({ children }) => {
       ? JSON.parse(localStorage.getItem("cartItems"))
       : []
   );
+
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const addToCart = (cartItem) => {
+    // setCartItems([...cartItems, cartItem]); 1. yol
     setCartItems((prevCart) => [
       ...prevCart,
       {
@@ -27,6 +29,7 @@ const CartProvider = ({ children }) => {
     const filteredCartItems = cartItems.filter((cartItem) => {
       return cartItem.id !== itemId;
     });
+
     setCartItems(filteredCartItems);
   };
 

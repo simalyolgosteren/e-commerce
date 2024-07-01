@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartProvider";
+
 const CartTotals = () => {
   const [fastCargoChecked, setFastCargoChecked] = useState(false);
   const { cartItems } = useContext(CartContext);
@@ -9,13 +10,17 @@ const CartTotals = () => {
 
     return itemTotal;
   });
+
   const subTotals = cartItemTotals.reduce((previousValue, currentValue) => {
     return previousValue + currentValue;
   }, 0);
+
   const cargoFee = 15;
+
   const cartTotals = fastCargoChecked
     ? (subTotals + cargoFee).toFixed(2)
     : subTotals.toFixed(2);
+
   return (
     <div className="cart-totals">
       <h2>Cart totals</h2>
@@ -62,4 +67,5 @@ const CartTotals = () => {
     </div>
   );
 };
+
 export default CartTotals;
