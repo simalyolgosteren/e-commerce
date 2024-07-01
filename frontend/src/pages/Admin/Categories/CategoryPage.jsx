@@ -65,6 +65,7 @@ const CategoryPage = () => {
       setLoading(false);
     }
   }, [apiUrl]);
+  
   const deleteCategory = async (categoryId) => {
     try {
       const response = await fetch(`${apiUrl}/api/categories/${categoryId}`, {
